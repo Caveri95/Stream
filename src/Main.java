@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.BiConsumer;
@@ -29,7 +30,7 @@ public class Main {
         strings.add("tree");
         strings.add("four");
         strings.add("queque");
-        strings.add("wrong");
+        strings.add("WRONG");
         strings.add("all");
 
         findMinMax(list.stream(), Integer::compareTo, (x, y) -> System.out.println("Минимальный элемент - "
@@ -54,9 +55,8 @@ public class Main {
         }
     }
     public static void evenNumbersCount(List<Integer> list) {
-        List<Integer> count = list.stream()
+        System.out.println(list.stream()
                 .filter(x -> x % 2 == 0)
-                .collect(Collectors.toList());
-        System.out.println(count.size());
+                .count());
     }
 }
